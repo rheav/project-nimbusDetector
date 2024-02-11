@@ -18,7 +18,7 @@ function MetaTagDetector({ onDetect }) {
           target: { tabId: tab.id },
           func: () => {
             const metaTags = {
-              "Meta Pixel": Array.from(
+              Meta: Array.from(
                 document.querySelectorAll(
                   'meta[name="facebook-domain-verification"]'
                 )

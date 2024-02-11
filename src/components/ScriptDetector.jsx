@@ -30,7 +30,7 @@ function ScriptDetector({ onDetect }) {
               /connect\.facebook\.net\/signals\/config\/(\d+)/;
 
             return {
-              "Meta Pixel": countOccurrencesWithRegex(metaPixelRegex),
+              Meta: countOccurrencesWithRegex(metaPixelRegex),
               "Google Tag Manager": countOccurrencesWithRegex(
                 /googletagmanager.com\/gtm.js\?id=GTM-/
               ),

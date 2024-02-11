@@ -7,11 +7,14 @@ import SvgNimbusLogo from "./components/SvgNimbusLogo";
 import StoreDetector from "./components/StoreDetector";
 import ScriptIdGetter from "./components/ScriptIdGetter";
 import DetectedScripts from "./components/DetectedScripts";
+import MetaIdGetter from "./components/MetaIdGetter";
+import DetectedMetaTags from "./components/DetectedMetaTags";
 
 function App() {
   const [scripts, setScripts] = useState([]);
   const [metaTags, setMetaTags] = useState([]);
   const [scriptIDs, setScriptIDs] = useState([]);
+  const [metaTagIDs, setMetaTagIDs] = useState({});
 
   const handleScriptsDetected = (detectedScripts) => {
     // Transform detectedScripts into an array and set it in state
@@ -46,6 +49,10 @@ function App() {
 
   const handleScriptIDsDetected = (detectedIDs) => {
     setScriptIDs(detectedIDs);
+  };
+
+  const handleMetaTagIDsDetected = (detectedIDs) => {
+    setMetaTagIDs(detectedIDs);
   };
 
   return (
@@ -89,13 +96,20 @@ function App() {
               }, */
               {
                 title: "Tags de Verificação de Domínio",
-                content: <Table dataType={metaTags} />,
+                content: (
+                  <>
+                    <Table dataType={metaTags} />{" "}
+                    <div className="mt-3">
+                      <DetectedMetaTags metaTagIDs={metaTagIDs} />
+                    </div>
+                  </>
+                ),
                 explanation: (
                   <span>
                     Aqui são exibidas as meta-tags para verificação de domínios.
                     <div className="text-ocean">
-                      ⚠️ Caso indique mais de 1 ocorrência da mesma tag , o
-                      ideal é <span>checar a instalação da mesma</span>.
+                      ⚠️ Caso indique mais de 1 ocorrência da mesma tag,
+                      <span> verifique a instalação</span>.
                     </div>
                   </span>
                 ),
@@ -112,6 +126,7 @@ function App() {
       <StoreDetector />
 
       <ScriptIdGetter onDetect={handleScriptIDsDetected} />
+      <MetaIdGetter onDetect={handleMetaTagIDsDetected} />
     </div>
   );
 }

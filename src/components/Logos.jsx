@@ -14,7 +14,7 @@ const tagsLogos = {
   "Google Tag Manager": gtm,
   Google: google,
   "Google Ads": googleads,
-  "Meta Pixel": meta,
+  Meta: meta,
   Pinterest: pinterest,
   Taboola: taboola,
   TikTok: tiktok,
