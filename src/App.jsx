@@ -106,7 +106,7 @@ function App() {
                 ),
                 explanation: (
                   <span>
-                    Aqui são exibidas as meta-tags para verificação de domínios.
+                    Aqui são exibidas as meta-tags para verificação do domínio.
                     <div className="text-ocean">
                       ⚠️ Caso indique mais de 1 ocorrência da mesma tag,
                       <span> verifique a instalação</span>.

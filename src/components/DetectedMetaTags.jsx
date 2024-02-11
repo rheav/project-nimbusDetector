@@ -37,6 +37,9 @@ function DetectedMetaTags({ metaTagIDs }) {
               })
             : null // If there are no IDs, do not render any chips
       )}
+      <div className="m-1 flex items-center bg-cream/30 rounded-md px-2 py-1 shadow-sm border border-frost/50 text-xs text-jade/80">
+        💡 Existem outras maneiras de verificar o domínio além de meta-tags!
+      </div>
     </div>
   );
 }

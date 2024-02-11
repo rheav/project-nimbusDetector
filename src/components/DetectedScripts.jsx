@@ -38,6 +38,9 @@ function DetectedScripts({ scriptIDs }) {
             />
           ))
       )}
+      <div className="m-1 flex items-center bg-cream/30 rounded-md px-2 py-1 shadow-sm border border-frost/50 text-xs text-jade/80">
+        ⚠️ Detecção de IDs ainda em beta!
+      </div>
     </div>
   );
 }

@@ -48,11 +48,7 @@ function Table({ dataType }) {
                 </span>
               </td>
               <td className="px-6 py-3 text-center">
-                {" "}
-                {/* Updated class name */}
                 <div className="flex items-center justify-center">
-                  {" "}
-                  {/* Added justify-center class */}
                   <div
                     className={`h-1.5 w-1.5 rounded-full ${
                       dataItem.status === "Online"
@@ -60,9 +56,18 @@ function Table({ dataType }) {
                         : "bg-red-500"
                     } me-2`}
                   ></div>
-                  {dataItem.status}
+                  <span
+                    className={`${
+                      dataItem.status === "Online"
+                        ? "text-forest/70"
+                        : "text-pebble/70"
+                    }`}
+                  >
+                    {dataItem.status}
+                  </span>
                 </div>
               </td>
+
               <td
                 className={`px-6 py-3 flex  justify-center gap-x-2 ${
                   dataItem.occurrences > 1 ? "items-center" : ""
