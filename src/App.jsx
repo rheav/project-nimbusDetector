@@ -6,14 +6,13 @@ import Tab from "./components/Tab";
 import SvgNimbusLogo from "./components/SvgNimbusLogo";
 import StoreDetector from "./components/StoreDetector";
 import ScriptIdGetter from "./components/ScriptIdGetter";
-import DetectedScripts from "./components/DetectedScripts";
 import MetaIdGetter from "./components/MetaIdGetter";
-import DetectedMetaTags from "./components/DetectedMetaTags";
+import ElementsIdGallery from "./components/ElementsIdGallery";
 
 function App() {
   const [scripts, setScripts] = useState([]);
-  const [metaTags, setMetaTags] = useState([]);
   const [scriptIDs, setScriptIDs] = useState([]);
+  const [metaTags, setMetaTags] = useState([]);
   const [metaTagIDs, setMetaTagIDs] = useState({});
 
   const handleScriptsDetected = (detectedScripts) => {
@@ -32,8 +31,8 @@ function App() {
     setScripts(sortedScriptsArray);
   };
 
-  const handleMetaTagsDetected = (detectedMetaTags) => {
-    const metaTagsArray = Object.entries(detectedMetaTags).map(
+  const handleMetaTagsDetected = (ShowMetaTagIDs) => {
+    const metaTagsArray = Object.entries(ShowMetaTagIDs).map(
       ([name, occurrences]) => ({
         name,
         status: occurrences > 0 ? "Online" : "Offline",
@@ -74,7 +73,10 @@ function App() {
                   <>
                     <Table dataType={scripts} />
                     <div className="mt-3">
-                      <DetectedScripts scriptIDs={scriptIDs} />
+                      <ElementsIdGallery
+                        elementIDs={scriptIDs}
+                        elementType="pixels"
+                      />
                     </div>
                   </>
                 ),
@@ -100,7 +102,10 @@ function App() {
                   <>
                     <Table dataType={metaTags} />{" "}
                     <div className="mt-3">
-                      <DetectedMetaTags metaTagIDs={metaTagIDs} />
+                      <ElementsIdGallery
+                        elementIDs={metaTagIDs}
+                        elementType="metaTags"
+                      />
                     </div>
                   </>
                 ),

@@ -48,7 +48,7 @@ function ScriptIdGetter({ onDetect }) {
                 /googletagmanager\.com\/gtm\.js\?id=(GTM-[A-Z0-9]+)/,
               GA4: /googletagmanager\.com\/gtag\/js\?id=(G-[A-Z0-9]+)/,
               "GA Universal": /google-analytics\.com\/analytics\.js/,
-              "Meta Pixel": /connect\.facebook\.net\/signals\/config\/(\d+)/,
+              Meta: /connect\.facebook\.net\/signals\/config\/(\d+)/,
               TikTok:
                 /analytics\.tiktok\.com\/i18n\/pixel\/events\.js\?sdkid=(\w+)/,
             };
